@@ -1,0 +1,13 @@
+[
+    { "id": 1, "name": "Хромолаб PRO 1.1", "labId": 1 },
+    { "id": 2, "name": "Хромолаб PRO 1.0", "labId": 1 },
+    { "id": 3, "name": "Хромолаб PRO PLUS 1.0", "labId": 1 },
+    { "id": 4, "name": "Хромолаб SPORT 1.0", "labId": 1 },
+    { "id": 5, "name": "Хромолаб GEN PRO 1.0", "labId": 1 },
+    
+    { "id": 6, "name": "Медси PRO 1.0", "labId": 2 },
+    { "id": 7, "name": "Медси PRO PLUS 1.0", "labId": 2 },
+    { "id": 8, "name": "Медси SPORT 1.0", "labId": 2 }
+
+]
+

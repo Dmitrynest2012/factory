@@ -1,0 +1,908 @@
+/* Импорт шрифта Play с Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+/* Применение шрифта к элементам на странице */
+body {
+    font-family: 'Play', sans-serif; /* Используем шрифт Play */
+    height: auto;
+    padding-bottom: 130px;
+    overflow: auto; /* Добавляем overflow */
+}
+
+
+/* Стили для вертикального скроллбара */
+body::-webkit-scrollbar {
+    width: 16px; /* Ширина вертикального скроллбара */
+    height: 16px; /* Высота горизонтального скроллбара */
+    transition: all 0.5s;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(214, 214, 214, 0.418); /* Фон дорожки скроллбара */
+    border-left: 1px solid rgb(161, 161, 161);
+    border-top: 1px solid rgb(161, 161, 161);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(207, 207, 207); /* Цвет скроллбара */
+    border: 1px solid rgba(54, 54, 54, 0.404);
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0px 2px 2px rgba(66, 66, 66, 0.199); /* Тени снизу */
+    z-index: 100;
+    transition: all 0.5s;
+}
+
+
+
+
+/* Градиентный эффект для вертикального скроллбара при наведении */
+body::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(to bottom, rgb(223, 223, 223), rgb(184, 184, 184)); /* Вертикальный градиент */
+}
+
+/* Градиентный эффект для горизонтального скроллбара при наведении */
+body.horizontal-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(to right, rgb(223, 223, 223), rgb(184, 184, 184)); /* Горизонтальный градиент */
+}
+
+
+
+/* Стили для "заклейки" */
+.sticky-note {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    bottom: -10px;
+    right: -10px;
+    padding: 0px;
+    background: rgb(94, 94, 94);
+    border-radius: 0px;
+    z-index: 200; /* Чтобы быть выше скроллбара */
+}
+
+
+
+
+/* Стили для панели управления */
+
+/* Стили для панели управления */
+.control-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #f0f0f0;
+    border: 1px solid #e6e6e6;
+    color: #fff; /* Цвет текста */
+    border-radius: 8px; /* Скругление углов */
+    padding: 20px; /* Внутренний отступ */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Тень */
+    font-family: 'Play', Tahoma, Geneva, Verdana, sans-serif; /* Шрифт */
+    display: flex; /* Отображение как flex-контейнер */
+    flex-direction: row; /* Горизонтальное расположение элементов */
+    flex-wrap: wrap; /* Перенос элементов на новую строку */
+    width: 2100px;
+    height: 140px;
+}
+
+/* Пример стилей для дочерних элементов панели (можно добавлять по необходимости) */
+.control-panel .button {
+    background-color: #3af; /* Цвет фона кнопок */
+    color: #fff; /* Цвет текста кнопок */
+    border: none; /* Убираем границу */
+    padding: 10px 20px; /* Внутренний отступ кнопок */
+    border-radius: 5px; /* Скругление углов кнопок */
+    cursor: pointer; /* Изменяем курсор при наведении */
+    font-size: 16px; /* Размер текста */
+    margin-right: 10px; /* Дополнительный отступ между кнопками */
+    margin-bottom: 10px; /* Отступ снизу между строками */
+}
+
+.control-panel .button:hover {
+    background-color: #4cf; /* Изменение цвета фона кнопки при наведении */
+}
+
+
+
+
+
+/* Back to Top Button Styles */
+.back-to-top {
+    display: none; /* Initially hidden */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(226, 226, 226);
+    border: 1px solid rgba(158, 158, 158, 0.205);
+    border-radius: 50%;
+    font-size: 24px;
+    color: rgb(73, 73, 73);
+    cursor: pointer;
+    box-shadow: 0px 5px 10px rgba(53, 53, 53, 0.2); /* Полукруглая тень */
+    transition: all 0.5s ease;
+    z-index: 200;
+}
+
+.back-to-top:hover {
+    background-color: gray;
+    color: rgb(214, 214, 214);
+}
+
+.back-to-top:active {
+    transform: scale(0.9);
+    background-color: rgb(223, 223, 223);
+}
+
+
+
+
+
+
+
+.client-label {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    padding: 10px;
+
+    color: #818181;
+}
+
+.client-gender-label {
+    position: absolute;
+    top: 34px;
+    left: 20px;
+    padding: 10px;
+
+    color: #818181;
+}
+
+.client-birthdate-label {
+    position: absolute;
+    top: 58px;
+    left: 20px;
+    padding: 10px;
+
+    color: #818181;
+}
+
+
+
+.client-laboratory-label {
+    position: absolute;
+    top: 10px;
+    left: 400px;
+    padding: 10px;
+
+    color: #818181;
+}
+
+
+.client-delivery-label {
+    position: absolute;
+    top: 34px;
+    left: 400px;
+    padding: 10px;
+
+    color: #818181;
+}
+
+
+.client-tariff-label {
+    position: absolute;
+    top: 58px;
+    left: 400px;
+    padding: 10px;
+
+    color: #818181;
+}
+
+
+
+
+
+
+
+
+/* Стили для текста "Пол" */
+.gender-label {
+    position: absolute;
+    top: 120px;
+    font-family: 'Play', sans-serif; /* Применяем шрифт Play к выпадающему списку */
+    padding: 10px;
+    font-size: 16px; /* Размер текста */
+    color: #333;
+    margin-bottom: 8px; /* Отступ снизу */
+    z-index: 19;
+    left: 20px;
+}
+
+
+/* Стилизация выпадающего списка */
+.gender-select {
+
+    position: absolute;
+    font-size: 16px;
+    font-family: 'Play', sans-serif; /* Применяем шрифт Play к выпадающему списку */
+    padding: 10px;
+
+    border-radius: 0px; /* Закругленные углы */
+    border: 1px solid #dddddd;
+    border-top: 1px solid #dddddd00;
+    border-bottom: 1px solid #dddddd00;
+
+    outline: none;
+    transition: all 0.3s ease; /* Плавная анимация */
+    top: 120px;
+    left: 100px;
+    width: 220px;
+    background-color: #ffffff00;
+    z-index: 19;
+
+}
+
+.gender-select:hover,
+.gender-select:focus {
+    border-color: #00a2ff8e; /* Изменение цвета рамки при наведении и фокусе */
+    box-shadow: inset 0 0 10px rgba(156, 156, 156, 0.4); /* Внутренняя тень при наведении и фокусе */
+    border-top: 1px solid #00a2ff8e;
+    border-bottom: 1px solid #00a2ff8e;
+    background-color: #fffffff3;
+}
+
+
+
+
+
+
+
+.age-label {
+    position: absolute;
+    font-family: 'Play', sans-serif; /* Применяем шрифт Play к выпадающему списку */
+    padding: 10px;
+    font-size: 16px; /* Размер текста */
+    color: #333;
+    margin-bottom: 8px; /* Отступ снизу */
+    left: 340px;
+    top: 120px;
+    z-index: 19;
+}
+
+.age-input {
+    position: absolute;
+    top: 120px;
+    left: 439px;
+    width: 200px;
+    height: 20px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: 'Play', sans-serif; /* Используем шрифт Play */
+    font-size: 14px;
+    font-weight: 400; /* Жирный шрифт */
+    border: 1px solid #ccc;
+    border-radius: 0px; /* Закругленные углы */
+    border-top: 1px solid rgba(0, 0, 0, 0);
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    background-color: #ffffff00;
+    transition: all 0.3s ease; /* Плавная анимация */
+    text-align: center;
+
+    /* Дополнительные стили для фокуса */
+    outline: none;
+    z-index: 20;
+}
+
+.age-input:hover,
+.age-input:focus {
+    border-color: #00a2ff8e; /* Изменение цвета рамки при наведении и фокусе */
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1); /* Тень при наведении и фокусе */
+    border-top: 1px solid #00a2ff8e;
+    border-bottom: 1px solid #00a2ff8e;
+    background-color: #fffffff3;
+}
+
+
+
+
+
+
+
+
+
+
+
+.lab-label {
+    position: absolute;
+    font-family: 'Play', sans-serif; /* Применяем шрифт Play к выпадающему списку */
+    padding: 10px;
+    font-size: 16px; /* Размер текста */
+    color: #333;
+    margin-bottom: 8px; /* Отступ снизу */
+    top: 120px;
+    left: 640px;
+    z-index: 19;
+}
+
+
+
+.lab-select {
+
+    position: absolute;
+    font-size: 16px;
+    font-family: 'Play', sans-serif; /* Применяем шрифт Play к выпадающему списку */
+    padding: 10px;
+
+    border-radius: 0px; /* Закругленные углы */
+    border: 1px solid #dddddd;
+    border-top: 1px solid #dddddd00;
+    border-bottom: 1px solid #dddddd00;
+
+    outline: none;
+    transition: all 0.3s ease; /* Плавная анимация */
+    top: 120px;
+    left: 780px;
+    width: 240px;
+    background-color: #ffffff00;
+    z-index: 19;
+
+}
+
+.lab-select:hover,
+.lab-select:focus {
+    border-color: #00a2ff8e; /* Изменение цвета рамки при наведении и фокусе */
+    box-shadow: inset 0 0 10px rgba(156, 156, 156, 0.4); /* Внутренняя тень при наведении и фокусе */
+    border-top: 1px solid #00a2ff8e;
+    border-bottom: 1px solid #00a2ff8e;
+    background-color: #fffffff3;
+}
+
+
+
+
+
+
+
+
+.tarif-label {
+    position: absolute;
+    font-family: 'Play', sans-serif; /* Применяем шрифт Play к выпадающему списку */
+    padding: 10px;
+    font-size: 16px; /* Размер текста */
+    color: #333;
+    margin-bottom: 8px; /* Отступ снизу */
+    top: 120px;
+    left: 1040px;
+    z-index: 19;
+}
+
+
+.tarif-select {
+
+    position: absolute;
+    font-size: 16px;
+    font-family: 'Play', sans-serif; /* Применяем шрифт Play к выпадающему списку */
+    padding: 10px;
+
+    border-radius: 0px; /* Закругленные углы */
+    border: 1px solid #dddddd;
+    border-top: 1px solid #dddddd00;
+    border-bottom: 1px solid #dddddd00;
+
+    outline: none;
+    transition: all 0.3s ease; /* Плавная анимация */
+    top: 120px;
+    left: 1130px;
+    width: 240px;
+    background-color: #ffffff00;
+    z-index: 19;
+
+}
+
+.tarif-select:hover,
+.tarif-select:focus {
+    border-color: #00a2ff8e; /* Изменение цвета рамки при наведении и фокусе */
+    box-shadow: inset 0 0 10px rgba(156, 156, 156, 0.4); /* Внутренняя тень при наведении и фокусе */
+    border-top: 1px solid #00a2ff8e;
+    border-bottom: 1px solid #00a2ff8e;
+    background-color: #fffffff3;
+}
+
+
+
+
+
+
+
+
+/* Стили для основного контейнера parametria */
+#parametria {
+    position: absolute; /* Важно для позиционирования абсолютных элементов внутри */
+    top: 190px;
+    padding: 20px;
+    padding-top: 40px;
+    padding-bottom: 0px;
+    background-color: #f0f0f0;
+    border: 1px solid #e6e6e6;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    margin: 25px 20px;
+    margin-bottom: 90px;
+}
+
+/* Стили для лейблов внутри parametria */
+#parametria .label-parameters,
+#parametria .label-norms,
+#parametria .label-values,
+#parametria .label-grades {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 10px; /* Выравниваем лейблы по верхнему краю контейнера */
+    font-family: 'Play';
+    font-weight: bold; /* Жирный текст */
+    margin-bottom: 10px;
+    color: #747474bd;
+}
+
+#parametria .label-parameters {
+    left: 35px; /* настройте нужное вам значение */
+    /* Дополнительные стили по вашему выбору */
+}
+
+#parametria .label-norms {
+    left: 485px; /* настройте нужное вам значение */
+    /* Дополнительные стили по вашему выбору */
+}
+
+#parametria .label-values {
+    left: 900px; /* настройте нужное вам значение */
+    /* Дополнительные стили по вашему выбору */
+}
+
+#parametria .label-grades {
+    left: 1030px; /* настройте нужное вам значение */
+    /* Дополнительные стили по вашему выбору */
+}
+
+
+
+
+.group-container {
+    background-color: rgba(175, 175, 175, 0.26);
+    border: 1px solid rgba(0, 0, 0, 0.151);
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.group-header {
+    font-family: 'Play';
+    padding-left: 10px;
+    font-weight: lighter;
+    color: #6d6d6d;
+}
+
+
+
+
+
+
+.inputContainer input {
+    position: absolute;
+    top: auto;
+    left: 869px;
+    width: 100px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: 'Play', sans-serif; /* Используем шрифт Play */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 0px; /* Закругленные углы */
+    border-top: 1px solid rgba(0, 0, 0, 0);
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    background-color: #ffffff00;
+    transition: all 0.3s ease; /* Плавная анимация */
+
+    /* Дополнительные стили для фокуса */
+    outline: none;
+}
+
+.inputContainer input:hover,
+.inputContainer input:focus {
+    border-color: #00a2ff8e; /* Изменение цвета рамки при наведении и фокусе */
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1); /* Тень при наведении и фокусе */
+    border-top: 1px solid #00a2ff8e;
+    border-bottom: 1px solid #00a2ff8e;
+    background-color: #fffffff3;
+}
+
+
+/* Стилизация выпадающего списка */
+select {
+
+    position: absolute;
+    font-size: 16px;
+    font-family: 'Play', sans-serif; /* Применяем шрифт Play к выпадающему списку */
+    padding: 10px;
+
+    border-radius: 0px; /* Закругленные углы */
+    border: 1px solid #dddddd;
+    border-top: 1px solid #dddddd00;
+    border-bottom: 1px solid #dddddd00;
+
+    outline: none;
+    transition: all 0.3s ease; /* Плавная анимация */
+    top: auto;
+    left: 450px;
+    width: 420px;
+    background-color: #ffffff00;
+
+}
+
+select:hover,
+select:focus {
+    border-color: #00a2ff8e; /* Изменение цвета рамки при наведении и фокусе */
+    box-shadow: inset 0 0 10px rgba(156, 156, 156, 0.4); /* Внутренняя тень при наведении и фокусе */
+    border-top: 1px solid #00a2ff8e;
+    border-bottom: 1px solid #00a2ff8e;
+    background-color: #fffffff3;
+}
+
+
+
+
+
+
+
+
+
+.matched-option {
+    color: rgb(0, 119, 255); /* Цвет текста полностью совпадающих элементов */
+}
+
+.matched-select {
+    color: rgb(0, 0, 0); /* Цвет текста выбранного элемента, если он полностью совпал */
+    
+}
+
+.unmatched-option {
+    color: rgb(255, 0, 0);
+}
+
+
+.gray-text {
+    color: rgb(196, 196, 196);
+}
+
+.age-text {
+    color: gray;
+}
+
+
+/* Стили для поискового инпута */
+.search-input {
+    position: fixed;
+    top: 0px;
+    left: -600px;
+    width: 150px;
+    padding: 8px;
+
+    font-size: 14px;
+    border: 1px solid #ccc;
+    background-color: beige;
+    border-radius: 8px;
+    z-index: 25;
+}
+
+
+
+
+
+
+.inputContainer {
+    position: relative;
+    height: 41px;
+    width: 1400px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 20px;
+    padding: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Плавный переход для фона и тени */
+}
+
+.inputContainer > * {
+
+    margin-right: 10px;
+    flex-grow: 1; /* Инпут занимает всю доступную ширину */
+}
+
+.inputContainer > :last-child {
+    margin-right: 0;
+
+}
+
+.inputContainer:hover,
+.inputContainer:focus {
+    box-shadow: inset 0 0 10px rgba(156, 156, 156, 0.4); /* Тень внутрь при наведении и фокусе */
+    background-color: rgba(166, 255, 0, 0.301);
+    border: 1px solid #a7a7a7;
+}
+
+
+
+.headerContainer {
+    position: absolute;
+    left: -1px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-right: 1px solid rgba(196, 196, 196, 0.493);
+    border-top-left-radius: 20px; /* Закругление верхнего левого угла */
+    border-bottom-left-radius: 20px; /* Закругление нижнего левого угла */
+    width: 270px;
+
+    max-height: 20px;
+    padding: 10px; /* Отступы внутри контейнера */
+    overflow: hidden; /* Обрезаем текст, если он не помещается */
+    white-space: nowrap; /* Запрещаем перенос текста */
+
+    cursor: pointer; /* Меняем курсор при наведении */
+    transition: width 0.5s; /* Плавное изменение ширины */
+}
+
+.headerContainer:hover {
+    border: 1px solid rgba(139, 139, 139, 0.493);
+    border-right: 2px solid rgba(139, 139, 139, 0.493);
+}
+
+.headerContainer.expanded {
+    width: 1291px; /* Расширяем контейнер в 3 раза */
+    background-color: rgb(197, 231, 255);
+    border-right: 1px solid rgb(172, 172, 172);
+    box-shadow: inset 0 0 10px rgba(156, 156, 156, 0.4); /* Тень внутрь при наведении и фокусе */
+    z-index: 50;
+}
+
+.headerContainer h2 {
+    font-weight: normal; /* Текст не жирный */
+    font-size: 16px; /* Размер текста 16 пикселей */
+    margin: 0; /* Убираем внешние отступы */
+    text-align: left; /* Текст центрируется слева */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.status {
+    position: absolute;
+    top: auto;
+    left: 1001px;
+    width: 300px;
+    height: 32px;
+    padding: 5px;
+    border-radius: 0px;
+    border-right: 1px solid rgba(185, 185, 185, 0.555);
+    color: rgb(0, 0, 0); /* Цвет текста */
+
+    font-size: 16px;
+    margin-top: 0px;
+
+    display: flex; /* Используем Flexbox */
+    align-items: center; /* Центрируем по вертикали */
+    justify-content: center;
+    text-align: center; /* Выравнивание текста по центру */
+
+    /* Внутренняя тень */
+    box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+
+.custom-radio {
+    width: 20px; /* Ширина радио кнопки */
+    height: 20px; /* Высота радио кнопки */
+    margin-right: 10px; /* Отступ справа от текста */
+    cursor: pointer; /* Изменяем курсор при наведении */
+
+    /* Стили для внешнего круга радио кнопки */
+    border: 2px solid #333;
+    border-radius: 50%;
+    background-color: aquamarine;
+    display: block;
+    position: relative;
+    top: 50px;
+    left: 50px;
+    z-index: 5;
+}
+
+
+.disabled-container {
+    opacity: 0.6; /* Уменьшаем прозрачность для заблокированного контейнера */
+    pointer-events: none; /* Отключаем возможность взаимодействия с элементами внутри контейнера */
+}
+
+.disabled-container input,
+.disabled-container select {
+    /* Стили для заблокированных инпутов и выпадающих списков */
+    background-color: #f2f2f2; /* Цвет фона */
+    border: 1px solid #ccc; /* Граница */
+    color: #999; /* Цвет текста */
+    cursor: not-allowed; /* Запрещаем курсор */
+}
+
+
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: grey;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.switch::before {
+    position: absolute;
+    content: '';
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.switch.on {
+    background-color: #2196F3;
+}
+
+.switch.on::before {
+    transform: translateX(20px);
+}
+
+
+
+
+
+
+/* Стили для индикатора */
+.indicator-green {
+    position: absolute;
+    display: inline-block;
+    top: 3px;
+    left: 410px;
+    width: 0px;
+    height: 0px;
+
+    font-size: 24px;
+    z-index: 11;
+    opacity: 0.5;
+}
+
+.indicator-gray {
+    position: absolute;
+    display: inline-block;
+    top: 3px;
+    left: 410px;
+    width: 0px;
+    height: 0px;
+
+    font-size: 24px;
+    z-index: 10;
+    opacity: 0.1;
+}
+
+/* Стили для контейнера индикатора, если вставляется в body */
+body > div {
+    display: inline-block;
+    margin: 0px;
+}
+
+
+
+
+
+
+
+/* Стили для чекбокса */
+.toggle-checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 20px;
+    background-color: #555555;
+
+    border-top: 1px solid rgb(78, 78, 78);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 12;
+
+    /* Вы можете также задать top, если нужно */
+    top: 0; /* Например, можно задать top для вертикального смещения */
+}
+
+/* Стили для включенного состояния чекбокса */
+.toggle-checkbox:checked {
+    background-color: #c295343f; /* Пример цвета для включенного состояния */
+    border: 1px solid rgba(78, 78, 78, 0.233);
+    border-radius: 20px;
+}
+
+/* Стили для индикатора переключателя */
+.toggle-checkbox::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #bebebe;
+    
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+    z-index: 12;
+}
+
+/* Стили для индикатора включенного состояния чекбокса */
+.toggle-checkbox:checked::after {
+    transform: translateX(78px); /* Пример смещения для включенного состояния */
+}
+
+
+
+
+
+
+
+
+
+.disabled-input {
+    opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1818 @@
+{
+    "positions": [
+
+
+        {
+            "name": "Витамин D 25-OH D2 (25-гидроксиэргокальциферол) и 25-ОН D3 (25-гидроксихолекальциферол) СУММАРНО, в крови",
+            "lowerBound": 50,
+            "upperBound": 100,
+            "unit": "нг/мл",
+            "gender": "all",
+            "ageLowerBound": 0,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+
+
+        {
+            "name": "Витамин 25(OH) D",
+            "lowerBound": 30,
+            "upperBound": 100,
+            "unit": "нг/мл",
+            "gender": "all",
+            "ageLowerBound": 0,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": false
+        },
+
+        {
+            "name": "витамин D 25-ОН, суммарный (кальциферол)",
+            "lowerBound": 50,
+            "upperBound": 100,
+            "unit": "нг/мл",
+            "gender": "all",
+            "ageLowerBound": 0,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": false
+        },
+
+        
+
+
+        {
+            "name": "Витамин E [альфа-токоферол] в крови",
+            "lowerBound": 5.5,
+            "upperBound": 17,
+            "unit": "мкг/мл",
+            "gender": "all",
+            "ageLowerBound": 0,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+        {
+            "name": "Витамин E [токоферол]",
+            "lowerBound": 5,
+            "upperBound": 18,
+            "unit": "мкг/мл",
+            "gender": "all",
+            "ageLowerBound": 0,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": false
+        },
+
+        {
+            "name": "Витамин E [альфа-токоферол] в крови",
+            "lowerBound": 3.8,
+            "upperBound": 18.4,
+            "unit": "мкг/мл",
+            "gender": "all",
+            "ageLowerBound": 0,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": false
+        },
+
+
+        {
+            "name": "Витамин B9 [фолиевая кислота] в крови",
+            "lowerBound": 3.1,
+            "upperBound": 20.5,
+            "unit": "нг/мл",
+            "gender": "all",
+            "ageLowerBound": 0,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": false
+        },
+
+
+
+
+
+        {
+            "name": "Витамин В12",
+            "lowerBound": 187,
+            "upperBound": 883,
+            "unit": "пг/мл",
+            "gender": "all",
+            "ageLowerBound": 0,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": false
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {
+            "name": "АлАТ",
+            "lowerBound": 13,
+            "upperBound": 45,
+            "unit": "Ед/л",
+            "gender": "all",
+            "ageLowerBound": 0,
+            "ageUpperBound": 0,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+        {
+            "name": "АлАТ",
+            "lowerBound": 0,
+            "upperBound": 50,
+            "unit": "Ед/л",
+            "gender": "male",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+        {
+            "name": "АлАТ",
+            "lowerBound": 0,
+            "upperBound": 35,
+            "unit": "Ед/л",
+            "gender": "female",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+
+
+        
+
+
+        {
+            "name": "АсАТ",
+            "lowerBound": 0,
+            "upperBound": 50,
+            "unit": "Ед/л",
+            "gender": "male",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+
+        {
+            "name": "АсАТ",
+            "lowerBound": 0,
+            "upperBound": 35,
+            "unit": "Ед/л",
+            "gender": "female",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+
+
+
+
+
+
+        {
+            "name": "Креатинин",
+            "lowerBound": 45,
+            "upperBound": 105,
+            "unit": "мкмоль/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 14,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Креатинин",
+            "lowerBound": 74,
+            "upperBound": 110,
+            "unit": "мкмоль/л",
+            "gender": "male",
+            "ageLowerBound": 15,
+            "ageUpperBound": 49,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Креатинин",
+            "lowerBound": 72,
+            "upperBound": 127,
+            "unit": "мкмоль/л",
+            "gender": "male",
+            "ageLowerBound": 50,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+
+        
+
+        {
+            "name": "Креатинин",
+            "lowerBound": 58,
+            "upperBound": 96,
+            "unit": "мкмоль/л",
+            "gender": "female",
+            "ageLowerBound": 15,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+
+
+
+
+        {
+            "name": "Мочевая кислота",
+            "lowerBound": 0,
+            "upperBound": 360,
+            "unit": "мкмоль/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+        {
+            "name": "Мочевая кислота",
+            "lowerBound": 0,
+            "upperBound": 416,
+            "unit": "мкмоль/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+
+        {
+            "name": "Мочевая кислота",
+            "lowerBound": 208.3,
+            "upperBound": 428.4,
+            "unit": "мкмоль/л",
+            "gender": "male",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+        {
+            "name": "Мочевая кислота",
+            "lowerBound": 154.7,
+            "upperBound": 357,
+            "unit": "мкмоль/л",
+            "gender": "female",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+        
+
+
+
+
+
+        {
+            "name": "Триглицериды",
+            "lowerBound": 0,
+            "upperBound": 1.7,
+            "unit": "ммоль/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+        
+
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 2.95,
+            "upperBound": 5.25,
+            "unit": "ммоль/л",
+            "gender": "male",
+            "ageLowerBound": 0,
+            "ageUpperBound": 4,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 3.13,
+            "upperBound": 5.25,
+            "unit": "ммоль/л",
+            "gender": "male",
+            "ageLowerBound": 5,
+            "ageUpperBound": 9,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 3.08,
+            "upperBound": 5.23,
+            "unit": "ммоль/л",
+            "gender": "male",
+            "ageLowerBound": 10,
+            "ageUpperBound": 14,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 2.93,
+            "upperBound": 5.1,
+            "unit": "ммоль/л",
+            "gender": "male",
+            "ageLowerBound": 15,
+            "ageUpperBound": 19,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 3.21,
+            "upperBound": 5.64,
+            "unit": "ммоль/л",
+            "gender": "male",
+            "ageLowerBound": 20,
+            "ageUpperBound": 24,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 3.44,
+            "upperBound": 6.32,
+            "unit": "ммоль/л",
+            "gender": "male",
+            "ageLowerBound": 25,
+            "ageUpperBound": 29,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 3.57,
+            "upperBound": 6.58,
+            "unit": "ммоль/л",
+            "gender": "male",
+            "ageLowerBound": 30,
+            "ageUpperBound": 34,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 3.78,
+            "upperBound": 6.99,
+            "unit": "ммоль/л",
+            "gender": "male",
+            "ageLowerBound": 35,
+            "ageUpperBound": 39,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 3.91,
+            "upperBound": 6.94,
+            "unit": "ммоль/л",
+            "gender": "male",
+            "ageLowerBound": 40,
+            "ageUpperBound": 44,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 4.09,
+            "upperBound": 7.15,
+            "unit": "ммоль/л",
+            "gender": "male",
+            "ageLowerBound": 45,
+            "ageUpperBound": 49,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 4.09,
+            "upperBound": 7.17,
+            "unit": "ммоль/л",
+            "gender": "male",
+            "ageLowerBound": 50,
+            "ageUpperBound": 54,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 4.04,
+            "upperBound": 7.15,
+            "unit": "ммоль/л",
+            "gender": "male",
+            "ageLowerBound": 55,
+            "ageUpperBound": 59,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 4.12,
+            "upperBound": 7.15,
+            "unit": "ммоль/л",
+            "gender": "male",
+            "ageLowerBound": 60,
+            "ageUpperBound": 64,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 4.09,
+            "upperBound": 7.1,
+            "unit": "ммоль/л",
+            "gender": "male",
+            "ageLowerBound": 65,
+            "ageUpperBound": 69,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 3.73,
+            "upperBound": 6.86,
+            "unit": "ммоль/л",
+            "gender": "male",
+            "ageLowerBound": 70,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+       
+        
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 2.9,
+            "upperBound": 5.18,
+            "unit": "ммоль/л",
+            "gender": "female",
+            "ageLowerBound": 0,
+            "ageUpperBound": 4,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 3.26,
+            "upperBound": 5.3,
+            "unit": "ммоль/л",
+            "gender": "female",
+            "ageLowerBound": 5,
+            "ageUpperBound": 9,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 3.21,
+            "upperBound": 5.2,
+            "unit": "ммоль/л",
+            "gender": "female",
+            "ageLowerBound": 10,
+            "ageUpperBound": 14,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 3.08,
+            "upperBound": 5.18,
+            "unit": "ммоль/л",
+            "gender": "female",
+            "ageLowerBound": 15,
+            "ageUpperBound": 19,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 3.16,
+            "upperBound": 5.59,
+            "unit": "ммоль/л",
+            "gender": "female",
+            "ageLowerBound": 20,
+            "ageUpperBound": 24,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 3.32,
+            "upperBound": 5.75,
+            "unit": "ммоль/л",
+            "gender": "female",
+            "ageLowerBound": 25,
+            "ageUpperBound": 29,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 3.37,
+            "upperBound": 5.96,
+            "unit": "ммоль/л",
+            "gender": "female",
+            "ageLowerBound": 30,
+            "ageUpperBound": 34,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 3.63,
+            "upperBound": 6.27,
+            "unit": "ммоль/л",
+            "gender": "female",
+            "ageLowerBound": 35,
+            "ageUpperBound": 39,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 3.81,
+            "upperBound": 6.53,
+            "unit": "ммоль/л",
+            "gender": "female",
+            "ageLowerBound": 40,
+            "ageUpperBound": 44,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 3.94,
+            "upperBound": 6.86,
+            "unit": "ммоль/л",
+            "gender": "female",
+            "ageLowerBound": 45,
+            "ageUpperBound": 49,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 4.2,
+            "upperBound": 7.38,
+            "unit": "ммоль/л",
+            "gender": "female",
+            "ageLowerBound": 50,
+            "ageUpperBound": 54,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 4.45,
+            "upperBound": 7.77,
+            "unit": "ммоль/л",
+            "gender": "female",
+            "ageLowerBound": 55,
+            "ageUpperBound": 59,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 4.45,
+            "upperBound": 7.69,
+            "unit": "ммоль/л",
+            "gender": "female",
+            "ageLowerBound": 60,
+            "ageUpperBound": 64,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 4.43,
+            "upperBound": 7.85,
+            "unit": "ммоль/л",
+            "gender": "female",
+            "ageLowerBound": 65,
+            "ageUpperBound": 69,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Холестерин общий (ХС)",
+            "lowerBound": 4.48,
+            "upperBound": 7.25,
+            "unit": "ммоль/л",
+            "gender": "female",
+            "ageLowerBound": 70,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        
+        
+        
+
+
+
+
+        
+
+
+
+        {
+            "name": "Холестерин - ЛПВП (альфа-холестерин)",
+            "lowerBound": 1.55,
+            "upperBound": "∞",
+            "unit": "ммоль/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+        
+
+
+
+
+
+        {
+            "name": "Холестерин - ЛПНП (бета-холестерин)",
+            "lowerBound": 0,
+            "upperBound": 3.3,
+            "unit": "ммоль/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+        
+
+
+
+
+
+        {
+            "name": "Коэффициент атерогенности",
+            "lowerBound": 1,
+            "upperBound": 2.5,
+            "unit": "",
+            "gender": "male",
+            "ageLowerBound": 0,
+            "ageUpperBound": 39,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+        {
+            "name": "Коэффициент атерогенности",
+            "lowerBound": 1,
+            "upperBound": 2.2,
+            "unit": "",
+            "gender": "female",
+            "ageLowerBound": 0,
+            "ageUpperBound": 39,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+        {
+            "name": "Коэффициент атерогенности",
+            "lowerBound": 1,
+            "upperBound": 3.5,
+            "unit": "",
+            "gender": "all",
+            "ageLowerBound": 40,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+
+
+        {
+            "parrent": "C-реактивный белок",
+            "name": "C-реактивный белок ультрачувствительный",
+            "lowerBound": 0,
+            "upperBound": 1,
+            "unit": "мг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+        {
+            "parrent": "C-реактивный белок",
+            "name": "C-реактивный белок",
+            "lowerBound": 0,
+            "upperBound": 5,
+            "unit": "мг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": false
+        },
+
+
+        
+
+        
+
+
+
+
+
+
+        {
+            "name": "Железо [свободное,белковосвязанное, сывороточное]",
+            "lowerBound": 9,
+            "upperBound": 21.5,
+            "unit": "мкмоль/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 16,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+        {
+            "name": "Железо [свободное,белковосвязанное, сывороточное]",
+            "lowerBound": 12.5,
+            "upperBound": 32.2,
+            "unit": "мкмоль/л",
+            "gender": "male",
+            "ageLowerBound": 17,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+        {
+            "name": "Железо [свободное,белковосвязанное, сывороточное]",
+            "lowerBound": 10.7,
+            "upperBound": 32.2,
+            "unit": "мкмоль/л",
+            "gender": "female",
+            "ageLowerBound": 17,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+        
+
+
+
+
+        {
+            "name": "Ферритин",
+            "lowerBound": 6,
+            "upperBound": 60,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 5,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Ферритин",
+            "lowerBound": 6,
+            "upperBound": 320,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 6,
+            "ageUpperBound": 18,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        
+
+
+
+
+        {
+            "name": "Ферритин",
+            "lowerBound": 20,
+            "upperBound": 250,
+            "unit": "мкг/л",
+            "gender": "male",
+            "ageLowerBound": 19,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+        {
+            "name": "Ферритин",
+            "lowerBound": 10,
+            "upperBound": 150,
+            "unit": "мкг/л",
+            "gender": "female",
+            "ageLowerBound": 19,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+
+
+
+
+        {
+            "name": "Гликозилированный гемоглобин [HbA1c]",
+            "lowerBound": 0,
+            "upperBound": 6,
+            "unit": "%",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+
+
+
+        {
+            "name": "Гомоцистеин",
+            "lowerBound": 5.46,
+            "upperBound": 6.2,
+            "unit": "мкмоль/л",
+            "gender": "male",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+        {
+            "name": "Гомоцистеин",
+            "lowerBound": 4.44,
+            "upperBound": 13.56,
+            "unit": "мкмоль/л",
+            "gender": "female",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+
+
+
+
+        
+
+
+        {
+            "name": "Эритроциты",
+            "lowerBound": 3.96,
+            "upperBound": 5.03,
+            "unit": "10*12/л",
+            "gender": "male",
+            "ageLowerBound": 6,
+            "ageUpperBound": 11,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        
+
+        {
+            "name": "Эритроциты",
+            "lowerBound": 4.03,
+            "upperBound": 5.29,
+            "unit": "10*12/л",
+            "gender": "male",
+            "ageLowerBound": 12,
+            "ageUpperBound": 17,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+
+        {
+            "name": "Эритроциты",
+            "lowerBound": 4.44,
+            "upperBound": 5.61,
+            "unit": "10*12/л",
+            "gender": "male",
+            "ageLowerBound": 18,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+        
+        
+
+
+        {
+            "name": "Эритроциты",
+            "lowerBound": 3.9,
+            "upperBound": 4.96,
+            "unit": "10*12/л",
+            "gender": "female",
+            "ageLowerBound": 6,
+            "ageUpperBound": 11,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+        {
+            "name": "Эритроциты",
+            "lowerBound": 3.93,
+            "upperBound": 4.9,
+            "unit": "10*12/л",
+            "gender": "female",
+            "ageLowerBound": 12,
+            "ageUpperBound": 17,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Эритроциты",
+            "lowerBound": 3.92,
+            "upperBound": 5.08,
+            "unit": "10*12/л",
+            "gender": "female",
+            "ageLowerBound": 18,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+
+
+
+
+        {
+            "name": "Гемоглобин",
+            "lowerBound": 107,
+            "upperBound": 134,
+            "unit": "г/л",
+            "gender": "male",
+            "ageLowerBound": 6,
+            "ageUpperBound": 11,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+        {
+            "name": "Гемоглобин",
+            "lowerBound": 110,
+            "upperBound": 145,
+            "unit": "г/л",
+            "gender": "male",
+            "ageLowerBound": 12,
+            "ageUpperBound": 17,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+        {
+            "name": "Гемоглобин",
+            "lowerBound": 135,
+            "upperBound": 169,
+            "unit": "г/л",
+            "gender": "male",
+            "ageLowerBound": 18,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+
+        {
+            "name": "Гемоглобин",
+            "lowerBound": 106,
+            "upperBound": 132,
+            "unit": "г/л",
+            "gender": "female",
+            "ageLowerBound": 6,
+            "ageUpperBound": 11,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Гемоглобин",
+            "lowerBound": 108,
+            "upperBound": 133,
+            "unit": "г/л",
+            "gender": "female",
+            "ageLowerBound": 12,
+            "ageUpperBound": 17,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Гемоглобин",
+            "lowerBound": 119,
+            "upperBound": 146,
+            "unit": "г/л",
+            "gender": "female",
+            "ageLowerBound": 18,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+
+
+        {
+            "name": "Гематокрит",
+            "lowerBound": 33.9,
+            "upperBound": 43.5,
+            "unit": "%",
+            "gender": "male",
+            "ageLowerBound": 12,
+            "ageUpperBound": 17,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Гематокрит",
+            "lowerBound": 40,
+            "upperBound": 49.4,
+            "unit": "%",
+            "gender": "male",
+            "ageLowerBound": 18,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+
+
+        {
+            "name": "Гематокрит",
+            "lowerBound": 33.4,
+            "upperBound": 40.4,
+            "unit": "%",
+            "gender": "female",
+            "ageLowerBound": 12,
+            "ageUpperBound": 17,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Гематокрит",
+            "lowerBound": 36.6,
+            "upperBound": 44,
+            "unit": "%",
+            "gender": "female",
+            "ageLowerBound": 18,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+
+
+
+
+
+        {
+            "name": "Тромбоциты",
+            "lowerBound": 175,
+            "upperBound": 332,
+            "unit": "10*9/л",
+            "gender": "male",
+            "ageLowerBound": 12,
+            "ageUpperBound": 17,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Тромбоциты",
+            "lowerBound": 166,
+            "upperBound": 308,
+            "unit": "10*9/л",
+            "gender": "male",
+            "ageLowerBound": 18,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+
+        {
+            "name": "Тромбоциты",
+            "lowerBound": 194,
+            "upperBound": 345,
+            "unit": "10*9/л",
+            "gender": "female",
+            "ageLowerBound": 12,
+            "ageUpperBound": 17,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Тромбоциты",
+            "lowerBound": 173,
+            "upperBound": 390,
+            "unit": "10*9/л",
+            "gender": "female",
+            "ageLowerBound": 18,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+
+
+        {
+            "name": "Лейкоциты",
+            "lowerBound": 3.84,
+            "upperBound": 9.84,
+            "unit": "10*9/л",
+            "gender": "male",
+            "ageLowerBound": 12,
+            "ageUpperBound": 17,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Лейкоциты",
+            "lowerBound": 3.91,
+            "upperBound": 8.77,
+            "unit": "10*9/л",
+            "gender": "male",
+            "ageLowerBound": 18,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+        {
+            "name": "Лейкоциты",
+            "lowerBound": 4.19,
+            "upperBound": 9.43,
+            "unit": "10*9/л",
+            "gender": "female",
+            "ageLowerBound": 12,
+            "ageUpperBound": 17,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        {
+            "name": "Лейкоциты",
+            "lowerBound": 4.4,
+            "upperBound": 9.7,
+            "unit": "10*9/л",
+            "gender": "female",
+            "ageLowerBound": 0,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+
+
+
+        {
+            "name": "Нейтрофилы",
+            "lowerBound": 1.82,
+            "upperBound": 7.42,
+            "unit": "10*9/л",
+            "gender": "male",
+            "ageLowerBound": 18,
+            "ageUpperBound": 69,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+        {
+            "name": "Нейтрофилы",
+            "lowerBound": 2,
+            "upperBound": 7.15,
+            "unit": "10*9/л",
+            "gender": "female",
+            "ageLowerBound": 18,
+            "ageUpperBound": 69,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+        
+
+
+
+
+
+        {
+            "name": "Литий Li",
+            "lowerBound": 1,
+            "upperBound": 35,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+        {
+            "name": "Бор Bo",
+            "lowerBound": 50,
+            "upperBound": 210,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+        {
+            "name": "Натрий Na",
+            "lowerBound": 2900,
+            "upperBound": 3588,
+            "unit": "мг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1"
+        },
+
+
+
+        {
+            "name": "Кремний Si",
+            "lowerBound": 30,
+            "upperBound": 900,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+
+        {
+            "name": "Калий K",
+            "lowerBound": 136,
+            "upperBound": 210,
+            "unit": "мг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+
+        {
+            "name": "Кальций Ca",
+            "lowerBound": 86,
+            "upperBound": 110,
+            "unit": "мг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+        {
+            "name": "Кальций Ca",
+            "lowerBound": 92,
+            "upperBound": 110,
+            "unit": "мг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": false
+        },
+
+
+        {
+            "name": "Хром Cr [К]",
+            "lowerBound": 0,
+            "upperBound": 3.1,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+        {
+            "name": "Кадмий Cd [К]",
+            "lowerBound": 0,
+            "upperBound": 5,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+        {
+            "name": "Свинец Pb [К]",
+            "lowerBound": 0,
+            "upperBound": 49,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+        {
+            "name": "Магний Mg [С]",
+            "lowerBound": 16,
+            "upperBound": 26,
+            "unit": "мг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+        {
+            "name": "Алюминий Al [С]",
+            "lowerBound": 0,
+            "upperBound": 15,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+        {
+            "name": "Титан Ti [С]",
+            "lowerBound": 0,
+            "upperBound": 5,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+        {
+            "name": "Марганец Mn [С]",
+            "lowerBound": 0,
+            "upperBound": 3,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+        {
+            "name": "Железо Fe [С]",
+            "lowerBound": 300,
+            "upperBound": 1700,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+        {
+            "name": "Кобальт Co [С]",
+            "lowerBound": 0,
+            "upperBound": 1,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+        {
+            "name": "Никель Ni [С]",
+            "lowerBound": 0,
+            "upperBound": 10,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+        {
+            "name": "Медь Cu [С]",
+            "lowerBound": 570,
+            "upperBound": 1550,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+        {
+            "name": "Цинк Zn [С]",
+            "lowerBound": 600,
+            "upperBound": 1200,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+        {
+            "name": "Мышьяк As [С]",
+            "lowerBound": 0,
+            "upperBound": 12,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+        
+        {
+            "name": "Селен Se [С]",
+            "lowerBound": 23,
+            "upperBound": 190,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+        {
+            "name": "Молибден Mo [С]",
+            "lowerBound": 0.3,
+            "upperBound": 2,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+        {
+            "name": "Сурьма Sb [С]",
+            "lowerBound": 0,
+            "upperBound": 10,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+        {
+            "name": "Ртуть Hg [С]",
+            "lowerBound": 0,
+            "upperBound": 5,
+            "unit": "мкг/л",
+            "gender": "all",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": true
+        },
+
+
+
+
+
+        
+
+        {
+            "name": "Глюкоза",
+            "lowerBound": 3.3,
+            "upperBound": 5.6,
+            "unit": "ммоль/л",
+            "gender": "all",
+            "ageLowerBound": 0,
+            "ageUpperBound": 16,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": false
+        },
+
+
+        {
+            "name": "Глюкоза",
+            "lowerBound": 4.1,
+            "upperBound": 5.9,
+            "unit": "ммоль/л",
+            "gender": "all",
+            "ageLowerBound": 17,
+            "ageUpperBound": 59,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": false
+        },
+
+        {
+            "name": "Глюкоза",
+            "lowerBound": 4.6,
+            "upperBound": 6.4,
+            "unit": "ммоль/л",
+            "gender": "all",
+            "ageLowerBound": 60,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": false
+        },
+
+
+
+        {
+            "name": "Инсулин",
+            "lowerBound": 2.3,
+            "upperBound": 26.4,
+            "unit": "мкМЕ/мл",
+            "gender": "all",
+            "ageLowerBound": 0,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": false
+        },
+
+
+        {
+            "name": "Индекс НОМА [The Homeostatic Model Assessment]",
+            "lowerBound": 0,
+            "upperBound": 2.77,
+            "unit": "",
+            "gender": "all",
+            "ageLowerBound": 0,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": false
+        },
+
+
+        {
+            "name": "Индекс CARO [инсулинорезистентность]",
+            "lowerBound": 0.33,
+            "upperBound": "∞",
+            "unit": "",
+            "gender": "all",
+            "ageLowerBound": 0,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб PRO 1.1",
+            "current": false
+        },
+        
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {
+            "name": "MTHFR [rs 1801133]",
+            "lowerBound": "8795444423122",
+            "upperBound": "8795444423122",
+            "unit": "",
+            "gender": "male",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб GEN PRO 1.0"
+        },
+
+        {
+            "name": "MTHFR [rs 1801133]",
+            "lowerBound": "8795444423122",
+            "upperBound": "8795444423122",
+            "unit": "",
+            "gender": "female",
+            "ageLowerBound": 1,
+            "ageUpperBound": 120,
+            "lab": "Хромолаб",
+            "panel": "Хромолаб GEN PRO 1.0"
+        }
+
+
+
+
+        
+    ]
+}
+
+

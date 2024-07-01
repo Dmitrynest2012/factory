@@ -1,0 +1,16 @@
+{
+    "Хромолаб PRO 1.1": {
+      "id": 1,
+      "options": ["vitamins", "biochemistry", "hematology", "minerals", "insulin resistance"],
+      "disable parameters": ["Индекс НОМА"]
+    },
+    "Хромолаб PRO PLUS 1.0": {
+      "id": 2,
+      "options": ["biochemistry", "hematology", "minerals"]
+    },
+    "Хромолаб GEN PRO 1.0": {
+      "id": 3,
+      "options": ["genetics"]
+    }
+  }
+  
