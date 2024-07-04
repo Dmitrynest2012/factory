@@ -997,6 +997,9 @@ async function createContainerWithInput(id, type, number, gender, age, parentCon
         // Создаем инпут с помощью функции createSmartInput, передавая значение disableToggle и defaultValue
         createSmartInput(`${id}-input`, 10, 6, id, disableToggle, headerText, defaultValue);
 
+        // Логируем parallelDataBuffer в консоль
+        console.log('Updated parallelDataBuffer:', parallelDataBuffer);
+
     } catch (error) {
         console.error('Error fetching data:', error);
     }
@@ -1127,44 +1130,44 @@ const filteredPositions = data.positions.filter(position => {
         });
         
 
-
-        
-
-        
-
-        select.addEventListener('change', () => {
-            const inputValue = document.getElementById(`${container.id}-input`).value;
-            updateGradePanelStatus(inputValue, container.id);
-            
-
-            // Сбрасываем стиль предыдущей выбранной опции
-            if (selectedOption) {
-                selectedOption.style.color = 'black'; // Черный цвет для не выбранной опции
-            }
-
-            // Получаем выбранную опцию
-            selectedOption = select.options[select.selectedIndex];
-            selectedOption.style.color = 'blue'; // Синий цвет для выбранной опции
-
-            // Получаем значения границ из выбранной опции
-            const bounds = JSON.parse(selectedOption.value);
-
-            // Обновляем parallelDataBuffer
-            const bufferItem = parallelDataBuffer.find(item => item.parameterHeader === filterName);
-            if (bufferItem) {
-                if (!bufferItem.lowerBound && !bufferItem.upperBound) {
-                    bufferItem.lowerBound = bounds.lowerBound;
-                    bufferItem.upperBound = bounds.upperBound;
-                }
-            } else {
-                parallelDataBuffer.push({
-                    lowerBound: bounds.lowerBound,
-                    upperBound: bounds.upperBound,
-
-                });
-            }
-            
+// Обновление параллельного буфера данных
+const updateParallelDataBuffer = (bounds) => {
+    const bufferItem = parallelDataBuffer.find(item => item.parameterHeader === filterName);
+    if (bufferItem) {
+        bufferItem.lowerBound = bounds.lowerBound;
+        bufferItem.upperBound = bounds.upperBound;
+    } else {
+        parallelDataBuffer.push({
+            parameterHeader: filterName,
+            lowerBound: bounds.lowerBound,
+            upperBound: bounds.upperBound,
+            inputValue: ""
         });
+    }
+};
+        
+
+        
+
+select.addEventListener('change', () => {
+    const inputValue = document.getElementById(`${container.id}-input`).value;
+    updateGradePanelStatus(inputValue, container.id);
+
+    // Сбрасываем стиль предыдущей выбранной опции
+    if (selectedOption) {
+        selectedOption.style.color = 'black'; // Черный цвет для не выбранной опции
+    }
+
+    // Получаем выбранную опцию
+    selectedOption = select.options[select.selectedIndex];
+    selectedOption.style.color = 'blue'; // Синий цвет для выбранной опции
+
+    // Получаем значения границ из выбранной опции
+    const bounds = JSON.parse(selectedOption.value);
+
+    // Обновляем parallelDataBuffer
+    updateParallelDataBuffer(bounds);
+});
 
         // Функция для загрузки JSON файла
 async function loadGeneticCodes() {
@@ -1181,7 +1184,7 @@ async function loadGeneticCodes() {
     }
 }
 
-
+// И
 
 // Пример функции createOption, которая использует данные из genetic_codes.json
 const createOptionGen = async (position) => {
@@ -1224,62 +1227,72 @@ const createOptionGen = async (position) => {
         option.classList.add('matched-option');
     }
 
-    select.appendChild(option);
-
     // Проверяем, соответствует ли текущая опция всем условиям фильтрации
     if (!selectedOption && age >= position.ageLowerBound && age <= position.ageUpperBound) {
         selectedOption = option;
+    }
+
+    select.appendChild(option);
+
+    // Устанавливаем начально выбранную опцию и обновляем параллельный буфер данных
+    if (selectedOption) {
+        selectedOption.selected = true;
+        const initialBounds = JSON.parse(selectedOption.value);
+        updateParallelDataBuffer(initialBounds);
     }
 };
 
 
 
 
-    const createOption = (position) => {
-        const option = document.createElement('option');
-        let upperBoundDisplay = position.upperBound; // Значение, которое будет отображаться на сайте
+
+const createOption = (position) => {
+    const option = document.createElement('option');
+    let upperBoundDisplay = position.upperBound; // Значение, которое будет отображаться на сайте
+
+    // Если верхняя граница "∞", заменяем на 999999 для обработки в JavaScript
+    if (position.upperBound === '∞') {
+        position.upperBound = 999999;
+        upperBoundDisplay = '∞'; // Отображаем символ бесконечности на сайте
+    }
+
+    const displayText = `${position.name} ${position.lowerBound} - ${upperBoundDisplay} ${position.unit}`;
+
+    const nameSpan = document.createElement('span');
+    nameSpan.textContent = displayText;
+    option.appendChild(nameSpan);
+
+    option.value = JSON.stringify({ lowerBound: position.lowerBound, upperBound: position.upperBound });
+
+    // Добавляем класс, если возраст находится в заданном диапазоне
+    if (age >= position.ageLowerBound && age <= position.ageUpperBound) {
+        option.classList.add('matched-option');
+    }
+
+    // Проверяем, соответствует ли текущая опция всем условиям фильтрации
+    if (!selectedOption && age >= position.ageLowerBound && age <= position.ageUpperBound) {
+        selectedOption = option;
+    }
+
     
-        // Если верхняя граница "∞", заменяем на 999999 для обработки в JavaScript
-        if (position.upperBound === '∞') {
-            position.upperBound = 999999;
-            upperBoundDisplay = '∞'; // Отображаем символ бесконечности на сайте
-        }
+
+    // Устанавливаем начально выбранную опцию и обновляем параллельный буфер данных
+    if (selectedOption) {
+        selectedOption.selected = true;
+        const initialBounds = JSON.parse(selectedOption.value);
+        updateParallelDataBuffer(initialBounds);
+    }
+
+    select.appendChild(option);
+
     
-        // Преобразуем числовые границы в буквенные коды для отображения на сайте
-        const letterCode = position.letterCode || ''; // Буквенный код
-        const displayText = `${position.name} ${letterCode} ${position.lowerBound} - ${upperBoundDisplay} ${position.unit}`;
-    
-        // Создаем структуру из span элементов для разных частей текста
-        const nameSpan = document.createElement('span');
-        nameSpan.textContent = displayText;
-        option.appendChild(nameSpan);
-    
-        option.value = JSON.stringify({ lowerBound: position.lowerBound, upperBound: position.upperBound });
-    
-        // Добавляем класс, если возраст находится в заданном диапазоне
-        if (age >= position.ageLowerBound && age <= position.ageUpperBound) {
-            option.classList.add('matched-option');
-        }
-    
-        select.appendChild(option);
-    
-        // Проверяем, соответствует ли текущая опция всем условиям фильтрации
-        if (!selectedOption && age >= position.ageLowerBound && age <= position.ageUpperBound) {
-            selectedOption = option;
-        }
-    };
+};
     
 
 
         
         
-        
-        
-        
-        
-        
-        
-
+       
         
 
         // Функция для фильтрации поискового запроса
@@ -1444,6 +1457,8 @@ function createSmartInput(id, maxLength, maxDecimalLength, containerId, disable,
 
     // Получаем значение по умолчанию из входного аргумента
     input.value = defaultValue;
+
+    
     
     // Функция для установки состояния disabled и класса disabled-input
     function setDisabledState(disable) {
@@ -1503,6 +1518,10 @@ function createSmartInput(id, maxLength, maxDecimalLength, containerId, disable,
     function updateIndicatorStatus(value) {
         createIndicator(value.trim() !== '', container);
     }
+
+
+
+    
 
 
     // Проверка значения и обновление статуса сразу после создания инпута
@@ -1655,111 +1674,101 @@ function createSmartInput(id, maxLength, maxDecimalLength, containerId, disable,
     }
 
 
-    if (tarif == 'Хромолаб GEN PRO 1.0') {
-        // Загрузка JSON файла с соответствиями
-        fetch('genetic_codes.json')
-            .then(response => response.json())
+    // Проверка на тариф
+console.log('Current tarif:', tarif);
+
+if (tarif !== 'Хромолаб GEN PRO 1.0') {
+    console.log('Handling non-GEN PRO 1.0 logic');
+    input.addEventListener('input', function() {
+        // Ваш существующий код здесь...
+    });
+    input.addEventListener('paste', function(event) {
+        // Ваш существующий код здесь...
+    });
+} else {
+    console.log('Handling GEN PRO 1.0 logic');
+    fetch('genetic_codes.json')
+            .then(response => {
+                console.log('JSON file loaded:', response.ok);
+                return response.json();
+            })
             .then(data => {
-                // Функция для замены сочетаний по данным из JSON
+                console.log('JSON data:', data);
                 const replaceGeneticCodes = function(value) {
                     for (let key in data) {
                         if (data.hasOwnProperty(key)) {
-                            // Заменяем сочетания на числовые значения
                             value = value.replace(new RegExp(key, 'g'), data[key]);
                         }
                     }
                     return value;
                 };
-    
-                // Функция для восстановления оригинального текста с буквенными кодами
+
                 const restoreOriginalText = function(value) {
                     for (let key in data) {
                         if (data.hasOwnProperty(key)) {
-                            // Восстанавливаем оригинальный текст с буквенными кодами
                             value = value.replace(new RegExp(data[key], 'g'), key);
                         }
                     }
                     return value;
                 };
-    
-                // Функция авто-правщика
+
                 const autoCorrect = function(value) {
-                    // Убираем все цифры и делаем буквы заглавными
                     return value.replace(/\d/g, '').toUpperCase();
                 };
 
                 
-    
-                // Обработчик события input для поля ввода
+
                 input.addEventListener('input', function() {
-                    let value = this.value.trim(); // Получаем текущее значение и убираем пробелы
-                    value = autoCorrect(value); // Применяем авто-правщик
-                    let numericValue = replaceGeneticCodes(value); // Заменяем сочетания на числовые значения
-                    this.value = restoreOriginalText(numericValue); // Восстанавливаем оригинальный текст с буквенными кодами
-                    updateGradePanelStatus(numericValue, containerId); // Обновляем статус
-                    updateIndicatorStatus(numericValue); // Обновляем индикатор
-                });
-    
-                // Обработчик события paste для поля ввода
-                input.addEventListener('paste', function(event) {
-                    // Отменяем стандартное действие вставки, чтобы обработать текст до его вставки
-                    event.preventDefault();
-    
-                    // Получаем вставляемый текст
-                    let pasteText = (event.clipboardData || window.clipboardData).getData('text');
-                    
-                    // Применяем авто-правщик к вставляемому тексту
-                    pasteText = autoCorrect(pasteText);
-    
-                    // Получаем текущее значение поля ввода
-                    let currentValue = this.value.trim();
-    
-                    // Вычисляем начальную и конечную позиции выделения, чтобы заменить текст в нужном месте
-                    let startPos = this.selectionStart;
-                    let endPos = this.selectionEnd;
-    
-                    // Формируем новое значение с заменой вставляемого текста
-                    let newValue = currentValue.slice(0, startPos) + pasteText + currentValue.slice(endPos);
-    
-                    // Заменяем сочетания на числовые значения
-                    let numericValue = replaceGeneticCodes(newValue);
-    
-                    // Восстанавливаем оригинальный текст с буквенными кодами
-                    newValue = restoreOriginalText(numericValue);
-    
-                    // Устанавливаем новое значение обратно в инпут
-                    this.value = newValue;
-    
-                    // Устанавливаем позицию курсора после вставки
-                    this.setSelectionRange(startPos + pasteText.length, startPos + pasteText.length);
-    
-                    // Обновляем статус
+                    let value = this.value.trim();
+                    console.log('Input event, original value:', value);
+                    value = autoCorrect(value);
+                    let numericValue = replaceGeneticCodes(value);
+                    console.log('Input event, corrected value:', value);
+                    console.log('Input event, numeric value:', numericValue);
+                    this.value = restoreOriginalText(numericValue);
                     updateGradePanelStatus(numericValue, containerId);
                     updateIndicatorStatus(numericValue);
+
+                    const bufferItem = parallelDataBuffer.find(item => item.parameterHeader === headerText);
+                    if (bufferItem) {
+                        bufferItem.inputValue = this.value;
+                    }
+                    console.log('Updated parallelDataBuffer:', parallelDataBuffer);
                 });
+
+                input.addEventListener('paste', function(event) {
+                    event.preventDefault();
+                    let pasteText = (event.clipboardData || window.clipboardData).getData('text');
+                    console.log('Paste event, original text:', pasteText);
+                    pasteText = autoCorrect(pasteText);
+                    let currentValue = this.value.trim();
+                    let startPos = this.selectionStart;
+                    let endPos = this.selectionEnd;
+                    let newValue = currentValue.slice(0, startPos) + pasteText + currentValue.slice(endPos);
+                    let numericValue = replaceGeneticCodes(newValue);
+                    newValue = restoreOriginalText(numericValue);
+                    console.log('Paste event, new value:', newValue);
+                    this.value = newValue;
+                    this.setSelectionRange(startPos + pasteText.length, startPos + pasteText.length);
+                    updateGradePanelStatus(numericValue, containerId);
+                    updateIndicatorStatus(numericValue);
+
+                    const bufferItem = parallelDataBuffer.find(item => item.parameterHeader === headerText);
+                    if (bufferItem) {
+                        bufferItem.inputValue = this.value;
+                    }
+                    console.log('Updated parallelDataBuffer:', parallelDataBuffer);
+                });
+
+                const bufferItem = parallelDataBuffer.find(item => item.parameterHeader === headerText);
+                if (bufferItem) {
+                    input.value = restoreOriginalText(bufferItem.inputValue);
+                    updateGradePanelStatus(bufferItem.inputValue, containerId);
+                    updateIndicatorStatus(bufferItem.inputValue);
+                }
             })
             .catch(error => console.error('Ошибка загрузки JSON файла', error));
     }
-    
-    
-    
-    
-
-    /*
-    
-    // Обработка события потери фокуса (blur)
-    input.addEventListener('blur', function() {
-        // Если событие вставки не происходило
-        if (!pasteEventTriggered) {
-            // При потере фокуса, убираем нули в конце дробной части (если есть)
-            if (this.value.includes('.')) {
-                let trimmedValue = originalValue.replace(/(\.[0-9]*[1-9])0+$/, '$1');
-                this.value = trimmedValue;
-            }
-        }
-        pasteEventTriggered = false; // Сбрасываем флаг вставки
-    });
-    */
 }
 
 
@@ -1786,8 +1795,21 @@ function updateGradePanelStatus(value, containerId, isChecked, tarif) {
         return;
     }
 
+    // Проверка наличия выбранного элемента
     const selectedOption = dropdown.options[dropdown.selectedIndex];
-    let bounds = JSON.parse(selectedOption.value);
+    if (!selectedOption || !selectedOption.value) {
+        console.error('No selected option or selected option has no value.');
+        return;
+    }
+
+    let bounds;
+    try {
+        bounds = JSON.parse(selectedOption.value);
+    } catch (e) {
+        console.error('Error parsing bounds from selected option value:', e);
+        return;
+    }
+
     let numberValue;
     let sign = ''; // Знак ">" или "<"
 
@@ -1857,11 +1879,8 @@ function updateGradePanelStatus(value, containerId, isChecked, tarif) {
         status.textContent = 'Генетич. отклонение';
         status.style.backgroundColor = 'rgba(229, 115, 115, 0.5)'; // Полупрозрачный красный цвет для опасного значения
     }
-
-    
-
-    
 }
+
 
 
 
