@@ -95,7 +95,6 @@ function updateDisplay() {
 }
 
 
-// Функция для импорта данных из JSON-файла
 function importFromJson(event) {
     const file = event.target.files[0];
     if (!file) return;
@@ -104,7 +103,7 @@ function importFromJson(event) {
     reader.onload = function(e) {
         try {
             const data = JSON.parse(e.target.result);
-            // Обновление глобальных переменных
+
             clientName = data.clientName || clientName;
             clientGender = data.clientGender || clientGender;
             clientBirthDate = data.clientBirthDate || clientBirthDate;
@@ -113,10 +112,23 @@ function importFromJson(event) {
             clientTariff = data.clientTariff || clientTariff;
             
             // Полная очистка и обновление буфера
-            parallelDataBuffer.length = 0; // Очистка буфера
-            parallelDataBuffer.push(...(data.parallelDataBuffer || [])); // Заполнение буфера новыми данными
+            parallelDataBuffer.length = 0;
+            if (Array.isArray(data.parallelDataBuffer)) {
+                for (const item of data.parallelDataBuffer) {
+                    if (typeof item.parameterHeader === 'string' &&
+                        (typeof item.lowerBound === 'number' || typeof item.lowerBound === 'string') &&
+                        (typeof item.upperBound === 'number' || typeof item.upperBound === 'string') &&
+                        typeof item.inputValue === 'string' &&
+                        typeof item.checkboxChecked === 'boolean') {
+                            parallelDataBuffer.push(item);
+                    } else {
+                        console.error('Некорректный формат данных в parallelDataBuffer');
+                    }
+                }
+            } else {
+                console.error('parallelDataBuffer в JSON не является массивом');
+            }
 
-            // Обновление отображаемых данных
             updateDisplay();
 
             console.log('Данные успешно импортированы:', {
@@ -135,19 +147,19 @@ function importFromJson(event) {
     reader.readAsText(file);
 }
 
-/* Создание и добавление кнопки для импорта данных
+
+/* Функция для создания кнопки импорта
 function createImportButton() {
     const input = document.createElement("input");
     input.type = "file";
     input.id = "importButton";
-    input.className = "import-button"; // Устанавливаем класс
-    input.accept = ".json"; // Только JSON-файлы
+    input.className = "import-button";
+    input.accept = ".json";
     input.addEventListener("change", importFromJson);
     document.getElementById('controlPanel').appendChild(input);
 }
+
 */
-
-
 
 
 
