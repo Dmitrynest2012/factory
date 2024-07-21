@@ -876,9 +876,9 @@ async function createCheckboxToggle(id, defaultValue) {
                 }
                 if (input) {
                     input.disabled = true;
-                    input.value = '';
-                    updateGradePanelStatus(input.value, container.id, checkbox.checked);
+                    input.value = ''; // Очистка значения инпута при активации чекбокса
                 }
+                updateGradePanelStatus('', container.id, checkbox.checked); // Обновление статуса панели
                 createIndicator(true, container);
             } else {
                 if (dropdown) dropdown.disabled = false;
@@ -886,11 +886,23 @@ async function createCheckboxToggle(id, defaultValue) {
                 createIndicator(false, container);
             }
         
-            const bufferItem = parallelDataBuffer.find(item => item.parameterHeader === id);
+            // Обновление состояния в parallelDataBuffer
+            let bufferItem = parallelDataBuffer.find(item => item.parameterHeader === id);
             if (bufferItem) {
                 bufferItem.checkboxChecked = checkbox.checked;
+                if (checkbox.checked) {
+                    bufferItem.lowerBound = '';
+                    bufferItem.upperBound = '';
+                    bufferItem.inputValue = '';
+                }
             } else {
-                parallelDataBuffer.push({ parameterHeader: id, checkboxChecked: checkbox.checked });
+                parallelDataBuffer.push({
+                    parameterHeader: id,
+                    checkboxChecked: checkbox.checked,
+                    lowerBound: checkbox.checked ? '' : '',
+                    upperBound: checkbox.checked ? '' : '',
+                    inputValue: checkbox.checked ? '' : ''
+                });
             }
 
             console.log(`Checkbox ${id} changed: ${checkbox.checked}`);
