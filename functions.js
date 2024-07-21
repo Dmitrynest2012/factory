@@ -1686,89 +1686,90 @@ if (tarif !== 'Хромолаб GEN PRO 1.0') {
         // Ваш существующий код здесь...
     });
 } else {
+    
+
     console.log('Handling GEN PRO 1.0 logic');
     fetch('genetic_codes.json')
-            .then(response => {
-                console.log('JSON file loaded:', response.ok);
-                return response.json();
-            })
-            .then(data => {
-                console.log('JSON data:', data);
-                const replaceGeneticCodes = function(value) {
-                    for (let key in data) {
-                        if (data.hasOwnProperty(key)) {
-                            value = value.replace(new RegExp(key, 'g'), data[key]);
-                        }
+        .then(response => {
+            console.log('JSON file loaded:', response.ok);
+            return response.json();
+        })
+        .then(data => {
+            console.log('JSON data:', data);
+            const replaceGeneticCodes = function(value) {
+                for (let key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        value = value.replace(new RegExp(key, 'g'), data[key]);
+                        console.log(value);
                     }
-                    return value;
-                };
+                }
+                return value;
+            };
 
-                const restoreOriginalText = function(value) {
-                    for (let key in data) {
-                        if (data.hasOwnProperty(key)) {
-                            value = value.replace(new RegExp(data[key], 'g'), key);
-                        }
+            const restoreOriginalText = function(value) {
+                for (let key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        value = value.replace(new RegExp(data[key], 'g'), key);
                     }
-                    return value;
-                };
+                }
+                return value;
+            };
 
-                const autoCorrect = function(value) {
-                    return value.replace(/\d/g, '').toUpperCase();
-                };
+            const autoCorrect = function(value) {
+                return value.replace(/\d/g, '').toUpperCase();
+            };
 
-                
-
-                input.addEventListener('input', function() {
-                    let value = this.value.trim();
-                    console.log('Input event, original value:', value);
-                    value = autoCorrect(value);
-                    let numericValue = replaceGeneticCodes(value);
-                    console.log('Input event, corrected value:', value);
-                    console.log('Input event, numeric value:', numericValue);
-                    this.value = restoreOriginalText(numericValue);
-                    updateGradePanelStatus(numericValue, containerId);
-                    updateIndicatorStatus(numericValue);
-
-                    const bufferItem = parallelDataBuffer.find(item => item.parameterHeader === headerText);
-                    if (bufferItem) {
-                        bufferItem.inputValue = this.value;
-                    }
-                    console.log('Updated parallelDataBuffer:', parallelDataBuffer);
-                });
-
-                input.addEventListener('paste', function(event) {
-                    event.preventDefault();
-                    let pasteText = (event.clipboardData || window.clipboardData).getData('text');
-                    console.log('Paste event, original text:', pasteText);
-                    pasteText = autoCorrect(pasteText);
-                    let currentValue = this.value.trim();
-                    let startPos = this.selectionStart;
-                    let endPos = this.selectionEnd;
-                    let newValue = currentValue.slice(0, startPos) + pasteText + currentValue.slice(endPos);
-                    let numericValue = replaceGeneticCodes(newValue);
-                    newValue = restoreOriginalText(numericValue);
-                    console.log('Paste event, new value:', newValue);
-                    this.value = newValue;
-                    this.setSelectionRange(startPos + pasteText.length, startPos + pasteText.length);
-                    updateGradePanelStatus(numericValue, containerId);
-                    updateIndicatorStatus(numericValue);
-
-                    const bufferItem = parallelDataBuffer.find(item => item.parameterHeader === headerText);
-                    if (bufferItem) {
-                        bufferItem.inputValue = this.value;
-                    }
-                    console.log('Updated parallelDataBuffer:', parallelDataBuffer);
-                });
+            input.addEventListener('input', function() {
+                let value = this.value.trim();
+                console.log('Input event, original value:', value);
+                value = autoCorrect(value);
+                let numericValue = replaceGeneticCodes(value);
+                console.log('Input event, corrected value:', value);
+                console.log('Input event, numeric value:', numericValue);
+                this.value = restoreOriginalText(numericValue);
+                updateGradePanelStatus(numericValue, containerId);
+                updateIndicatorStatus(numericValue);
 
                 const bufferItem = parallelDataBuffer.find(item => item.parameterHeader === headerText);
                 if (bufferItem) {
-                    input.value = restoreOriginalText(bufferItem.inputValue);
-                    updateGradePanelStatus(bufferItem.inputValue, containerId);
-                    updateIndicatorStatus(bufferItem.inputValue);
+                    bufferItem.inputValue = numericValue;
                 }
-            })
-            .catch(error => console.error('Ошибка загрузки JSON файла', error));
-    }
+                console.log('Updated parallelDataBuffer:', parallelDataBuffer);
+            });
+
+            input.addEventListener('paste', function(event) {
+                event.preventDefault();
+                let pasteText = (event.clipboardData || window.clipboardData).getData('text');
+                console.log('Paste event, original text:', pasteText);
+                pasteText = autoCorrect(pasteText);
+                let currentValue = this.value.trim();
+                let startPos = this.selectionStart;
+                let endPos = this.selectionEnd;
+                let newValue = currentValue.slice(0, startPos) + pasteText + currentValue.slice(endPos);
+                let numericValue = replaceGeneticCodes(newValue);
+                newValue = restoreOriginalText(numericValue);
+                console.log('Paste event, new value:', newValue);
+                this.value = newValue;
+                this.setSelectionRange(startPos + pasteText.length, startPos + pasteText.length);
+                updateGradePanelStatus(numericValue, containerId);
+                updateIndicatorStatus(numericValue);
+
+                const bufferItem = parallelDataBuffer.find(item => item.parameterHeader === headerText);
+                if (bufferItem) {
+                    bufferItem.inputValue = numericValue;
+                }
+                console.log('Updated parallelDataBuffer:', parallelDataBuffer);
+            });
+
+            const bufferItem = parallelDataBuffer.find(item => item.parameterHeader === headerText);
+            if (bufferItem) {
+                input.value = restoreOriginalText(bufferItem.inputValue);
+                updateGradePanelStatus(bufferItem.inputValue, containerId);
+                updateIndicatorStatus(bufferItem.inputValue);
+            }
+        })
+        .catch(error => console.error('Ошибка загрузки JSON файла', error));
+}
 }
 
 
