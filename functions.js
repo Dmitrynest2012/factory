@@ -28,6 +28,125 @@ const labsData = [
 ];
 
 
+// Функция для экспорта данных в JSON-файл
+function exportToJson() {
+    // Создание объекта данных
+    const data = {
+        clientName,
+        clientGender,
+        clientBirthDate,
+        clientLaboratory,
+        clientDeliveryDateTime,
+        clientTariff,
+        parallelDataBuffer
+    };
+
+    // Преобразование объекта данных в строку JSON
+    const jsonString = JSON.stringify(data, null, 2);
+
+    // Создание ссылки для скачивания
+    const blob = new Blob([jsonString], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "blood-digitization.json"; // Имя файла по умолчанию
+
+    // Эмуляция клика для скачивания файла
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+
+// Создание и добавление кнопки для экспорта данных
+function createExportButton() {
+    const button = document.createElement("button");
+    button.textContent = "Экспортировать в JSON";
+    button.className = "export-button"; // Устанавливаем класс
+    button.addEventListener("click", exportToJson);
+    document.body.appendChild(button);
+}
+
+// Вызов функции для создания кнопок после загрузки страницы
+window.onload = function() {
+    createExportButton();
+    createImportButton();
+};
+
+
+
+
+
+
+
+// Функция для обновления отображаемых данных
+function updateDisplay() {
+    // Найти или создать элемент для даты рождения
+    let clientBirthDateLabel = document.getElementById('clientBirthDateLabel');
+    if (clientBirthDateLabel) {
+       
+        clientBirthDateLabel.textContent = `Дата рождения: ${clientBirthDate}`;
+       
+       
+    }
+    
+
+    // Можно добавить аналогичные элементы для других глобальных переменных
+}
+
+
+// Функция для импорта данных из JSON-файла
+function importFromJson(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        try {
+            const data = JSON.parse(e.target.result);
+            // Обновление глобальных переменных
+            clientName = data.clientName || clientName;
+            clientGender = data.clientGender || clientGender;
+            clientBirthDate = data.clientBirthDate || clientBirthDate;
+            clientLaboratory = data.clientLaboratory || clientLaboratory;
+            clientDeliveryDateTime = data.clientDeliveryDateTime || clientDeliveryDateTime;
+            clientTariff = data.clientTariff || clientTariff;
+            
+            // Полная очистка и обновление буфера
+            parallelDataBuffer.length = 0; // Очистка буфера
+            parallelDataBuffer.push(...(data.parallelDataBuffer || [])); // Заполнение буфера новыми данными
+
+            // Обновление отображаемых данных
+            updateDisplay();
+
+            console.log('Данные успешно импортированы:', {
+                clientName,
+                clientGender,
+                clientBirthDate,
+                clientLaboratory,
+                clientDeliveryDateTime,
+                clientTariff,
+                parallelDataBuffer
+            });
+        } catch (error) {
+            console.error('Ошибка при чтении файла:', error);
+        }
+    };
+    reader.readAsText(file);
+}
+
+/* Создание и добавление кнопки для импорта данных
+function createImportButton() {
+    const input = document.createElement("input");
+    input.type = "file";
+    input.id = "importButton";
+    input.className = "import-button"; // Устанавливаем класс
+    input.accept = ".json"; // Только JSON-файлы
+    input.addEventListener("change", importFromJson);
+    document.getElementById('controlPanel').appendChild(input);
+}
+*/
+
 
 
 
@@ -342,6 +461,7 @@ function createParametriaContainer(gender, age) {
 function createControlPanel(panelId) {
     // Создаем элемент панели управления
     const panel = document.createElement('div');
+    panel.id = 'controlPanel'; // Устанавливаем ID панели управления
     
     // Присваиваем класс для стилизации
     panel.classList.add('control-panel');
@@ -378,6 +498,7 @@ function createControlPanel(panelId) {
 
     // Создаем контейнер для текста "Дата рождения клиента"
     const clientBirthDateLabel = document.createElement('div');
+    clientBirthDateLabel.id = 'clientBirthDateLabel'; // Устанавливаем ID
     clientBirthDateLabel.textContent = `Дата рождения: ${clientBirthDate} [${clientAge} лет]`;
     clientBirthDateLabel.classList.add('client-birthdate-label');
 
@@ -730,27 +851,18 @@ const checkboxStates = [];
  */
 async function createCheckboxToggle(id, defaultValue) {
     try {
-        // Находим элемент, куда нужно вставить переключатель
         const container = document.getElementById(id);
         
-        // Создаем элементы чекбокса
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.checked = defaultValue;
         
-        // Добавляем информацию о чекбоксе в массив checkboxStates
-        checkboxStates.push({ id, checked: defaultValue });
-
-        // Добавляем классы для стилизации (будут определены в CSS)
         checkbox.classList.add('toggle-checkbox');
-        
-        // Устанавливаем стиль для смещения чекбокса на 550 пикселей влево
         checkbox.style.position = 'absolute';
         checkbox.style.left = '300px';
         checkbox.style.border = '1px solid rgba(78, 78, 78, 0.25)';
         checkbox.style.borderRadius = '20px';
-        
-        // Добавляем обработчик события изменения состояния чекбокса
+
         checkbox.addEventListener('change', function() {
             const dropdownId = `${id}-dropdown`;
             const inputId = `${id}-input`;
@@ -758,42 +870,33 @@ async function createCheckboxToggle(id, defaultValue) {
             const input = document.getElementById(inputId);
         
             if (checkbox.checked) {
-                // Блокируем выпадающий список и инпут
                 if (dropdown) {
                     dropdown.disabled = true;
-                    // Очищаем значение выпадающего списка
                     dropdown.selectedIndex = -1;
                 }
                 if (input) {
                     input.disabled = true;
-                    // Очищаем значение инпута
                     input.value = '';
-                    updateGradePanelStatus(input.value, container.id, checkbox.checked); // Передача состояния чекбокса
+                    updateGradePanelStatus(input.value, container.id, checkbox.checked);
                 }
-                // Показываем индикатор
                 createIndicator(true, container);
             } else {
-                // Разблокируем выпадающий список и инпут
-               
                 if (dropdown) dropdown.disabled = false;
-                disableToggle = false;
-                
                 if (input) input.disabled = false;
-                // Скрываем индикатор
                 createIndicator(false, container);
             }
         
-            // Обновляем значение в массиве checkboxStates
-            const index = checkboxStates.findIndex(item => item.id === id);
-            if (index !== -1) {
-                checkboxStates[index].checked = checkbox.checked;
+            const bufferItem = parallelDataBuffer.find(item => item.parameterHeader === id);
+            if (bufferItem) {
+                bufferItem.checkboxChecked = checkbox.checked;
+            } else {
+                parallelDataBuffer.push({ parameterHeader: id, checkboxChecked: checkbox.checked });
             }
+
             console.log(`Checkbox ${id} changed: ${checkbox.checked}`);
+            console.log('Updated parallelDataBuffer:', parallelDataBuffer);
         });
-        
-        
-        
-        // Добавляем чекбокс в контейнер
+
         container.appendChild(checkbox);
     } catch (error) {
         console.error('Error creating checkbox:', error);
@@ -905,7 +1008,7 @@ function createHeaderWithCounter(count, headerText, paramId) {
 
 // Буфер для сохранения значений при смене панелей
 let parallelDataBuffer = [
-    { parameterHeader: "", lowerBound: "", upperBound: "", inputValue: "" }
+    { parameterHeader: "", lowerBound: "", upperBound: "", inputValue: "", checkboxChecked: ""}
 ];
 
 
@@ -923,14 +1026,12 @@ let parallelDataBuffer = [
 async function createContainerWithInput(id, type, number, gender, age, parentContainer, panels) {
     const container = document.createElement('div');
     container.id = id;
-    container.classList.add('inputContainer'); // Добавляем класс для стилей (если нужно)
+    container.classList.add('inputContainer');
 
     try {
-        // Загружаем данные из JSON файла
         const response = await fetch('data.json');
         const data = await response.json();
 
-        // Определяем заголовок контейнера и ID параметра в зависимости от типа и номера
         let headerText = 'Unknown Parameter';
         let paramId = null;
 
@@ -938,7 +1039,6 @@ async function createContainerWithInput(id, type, number, gender, age, parentCon
             const groupId = data[type].group_id;
             paramId = groupId + '-' + number;
 
-            // Проверяем, есть ли соответствующий параметр ID
             const idKey = `id ${number}`;
             if (data[type][idKey]) {
                 headerText = data[type][idKey];
@@ -950,60 +1050,58 @@ async function createContainerWithInput(id, type, number, gender, age, parentCon
             console.error(`Data for type "${type}" not found in data.json`);
         }
 
-        // Увеличиваем глобальный счетчик контейнеров
         globalContainerCount++;
 
-        // Создаем заголовок с отображаемым значением счетчика и ID параметра
         const headerContainer = createHeaderWithCounter(globalContainerCount, headerText, paramId);
-
-        // Добавляем заголовок в контейнер
         container.appendChild(headerContainer);
-        container.setAttribute('data-type', type); // Добавляем атрибут для удобства (если нужно)
+        container.setAttribute('data-type', type);
 
-        // Добавляем контейнер в родительский контейнер
         parentContainer.appendChild(container);
 
-        // Загружаем данные из panels.json
         const panelsResponse = await fetch('panels.json');
         const panelsData = await panelsResponse.json();
 
-        // Определяем нужно ли отключить параметр в зависимости от значения переменной tarif
         let disableToggle = false;
         if (panelsData[tarif] && panelsData[tarif]['disable parameters']) {
             disableToggle = panelsData[tarif]['disable parameters'].includes(headerText);
         }
 
-        // Создаем переключатель чекбокса с использованием данных из panels.json
-        await createCheckboxToggle(id, disableToggle, panels);
-
-        // Создаем выпадающий список перед инпутом
-        await createDropdownList(`${id}-dropdown`, headerText, container, gender, age, tarif, paramId, disableToggle);
-
-        // Проверяем наличие элемента в parallelDataBuffer
+        // Проверяем наличие элемента в parallelDataBuffer и используем его состояние чекбокса
         let bufferItem = parallelDataBuffer.find(item => item.parameterHeader === headerText);
-        let defaultValue = '';
+        let checkboxChecked = disableToggle;
+        let inputValue = '';
         if (bufferItem) {
-            defaultValue = bufferItem.inputValue;
+            checkboxChecked = bufferItem.checkboxChecked !== undefined ? bufferItem.checkboxChecked : disableToggle;
+            inputValue = checkboxChecked ? '' : bufferItem.inputValue; // Очищаем инпут, если чекбокс включен
         } else {
             bufferItem = {
                 parameterHeader: headerText,
                 lowerBound: "",
                 upperBound: "",
-                inputValue: ""
+                inputValue: "",
+                checkboxChecked: disableToggle
             };
             parallelDataBuffer.push(bufferItem);
         }
 
-        // Создаем инпут с помощью функции createSmartInput, передавая значение disableToggle и defaultValue
-        createSmartInput(`${id}-input`, 10, 6, id, disableToggle, headerText, defaultValue);
+        // Создаем переключатель чекбокса
+        await createCheckboxToggle(id, checkboxChecked);
 
-        // Логируем parallelDataBuffer в консоль
+        // Создаем выпадающий список
+        await createDropdownList(`${id}-dropdown`, headerText, container, gender, age, tarif, paramId, checkboxChecked);
+
+        // Создаем инпут с очищенным значением, если чекбокс включен
+        createSmartInput(`${id}-input`, 10, 6, id, checkboxChecked, headerText, inputValue);
+
         console.log('Updated parallelDataBuffer:', parallelDataBuffer);
 
     } catch (error) {
         console.error('Error fetching data:', error);
     }
 }
+
+
+
 
 /**
  * Главная функция, загружающая данные и создающая контейнеры последовательно.
